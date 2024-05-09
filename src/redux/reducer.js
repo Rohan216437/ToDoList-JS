@@ -1,4 +1,4 @@
-67.limport { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
@@ -10,6 +10,10 @@ const addToDoReducer = createSlice({
         addTodos : (state , action) => {
             state.push(action.payload);
             return state
+        },
+        //remove todo
+        removeTodos : (state , action) => {
+            return state.filter((item) => item.id !== action.payload)
         },
         
     }

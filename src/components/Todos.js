@@ -1,7 +1,6 @@
-import React , { useRef, useState } from 'react'
+import React , { useState } from 'react'
 import { connect } from 'react-redux'
 import { addTodos, completeTodos, removeTodos, updateTodos } from '../redux/reducer'
-import TodoItem from './TodoItem'
 
 const mapStateToProps = (state) => {
   return {
@@ -21,25 +20,11 @@ const mapDispatchToProps = (dispatch) => {
 const Todos = (props) => {
   const [todo, setTodo] = useState("");
 
-  const inputRef = useRef(true);
-
-  const changeFocus = () => {
-    inputRef.current.disabled = false;
-    inputRef.current.focus();
-  }
-
-  const update = (id , value , e) => {
-    if(e.which === 13){
-      //13 is the keyword for enter button on keypad
-      props.updateTodo({id , item:value});
-      inputRef.current.disabled = true
-    }
-  }
-
+  
   const handleChange = (e) => {
     setTodo(e.target.value)
   }
-  console.log("todo text consoled here --->>>" , props)
+  // console.log("todo text consoled here --->>>" , props)
   return (
     <div>
       <input type="text" onChange={(e) => {handleChange(e)}}/>
@@ -50,16 +35,6 @@ const Todos = (props) => {
         completed : false
       })}>Add</button>
       <br />
-
-      <ul>
-        {
-          props.todos.map((item) => {
-            return (
-              <TodoItem />
-            )
-          })
-        }
-      </ul>
     </div>
   )
 }

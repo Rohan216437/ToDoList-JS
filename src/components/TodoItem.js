@@ -27,9 +27,13 @@ const TodoItem = (props) => {
           defaultValue={item.item} 
           onKeyPress={(e) => update(item.id , inputRef.current.value , e)} 
         ></textarea>
-      <button onClick={() => changeFocus()}>Edit</button>
-      <button onClick={() => completeTodo(item.id)}>complete</button> 
-      <button onClick={() => removeTodo(item.id)}>Delete</button> 
+        <div>
+          <button onClick={() => changeFocus()}>Edit</button>
+          <button onClick={() => completeTodo(item.id)}>complete</button> 
+          <button onClick={() => removeTodo(item.id)}>Delete</button> 
+        </div>
+
+        {item.completed && <span className='completed'>Done</span>}
     </li>
   )
 }

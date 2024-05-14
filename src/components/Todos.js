@@ -19,12 +19,26 @@ const mapDispatchToProps = (dispatch) => {
 
 const Todos = (props) => {
   const [todo, setTodo] = useState("");
+  // const inputRef = useRef(true);
 
   
   const handleChange = (e) => {
     setTodo(e.target.value)
   }
   // console.log("todo text consoled here --->>>" , props)
+
+  // const changeFocus = () => {
+  //   inputRef.current.disabled = false;
+  //   inputRef.current.focus();
+  // }
+
+  // const update = (id , value , e) => {
+  //   if(e.which === 13){
+  //     //13 is the keyword for enter button on keypad
+  //     props.updateTodo({id , item:value});
+  //     inputRef.current.disabled = true
+  //   }
+  // }
   return (
     <div>
       <input type="text" onChange={(e) => {handleChange(e)}}/>
@@ -35,6 +49,14 @@ const Todos = (props) => {
         completed : false
       })}>Add</button>
       <br />
+
+      {/* <ul>
+        {props.todos.map((item) => {
+          return (
+            
+          );
+        })}
+      </ul> */}
     </div>
   )
 }

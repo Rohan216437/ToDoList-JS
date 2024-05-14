@@ -9,7 +9,14 @@ const mapStateToProps = (state) => {
     }
   }
   
-  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      addTodo: (obj) => dispatch(addTodos(obj)),
+      removeTodo : (id) => dispatch(removeTodos(id)),
+      updateTodo : (obj) => dispatch(updateTodos(obj)),
+      completeTodo : (id) => dispatch(completeTodos(id)),
+    };
+  };
 
 const DisplayTodo = (props) => {
 

@@ -30,7 +30,26 @@ const DisplayTodo = (props) => {
             <button onClick={() => setSort("all")}>All</button>
         </div>
 
-        
+        <ul>
+            {/* for active task only */}
+            {props.todos.length > 0 && sort === "active" ?
+                props.todos.map(item => {
+                    return (
+                        item.completed === false && (
+                            <TodoItem
+                            key={item.id}
+                            item={item}
+                            removeTodo={props.removeTodo}
+                            updateTodo={props.updateTodo}
+                            completeTodo={props.completeTodo}
+                            />
+                        )   
+                    )
+                }) : null
+            }
+
+            
+        </ul>
     </div>
   )
 }

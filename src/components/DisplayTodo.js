@@ -23,7 +23,34 @@ const DisplayTodo = (props) => {
     const [sort , setSort] = useState("active")
 
   return (
-    <></>
+    <div>
+        <div>
+            <button onClick={() => setSort("active")}>Active</button>
+            <button onClick={() => setSort("completed")}>Completed</button>
+            <button onClick={() => setSort("all")}>All</button>
+        </div>
+
+        <ul>
+            {/* for active task only */}
+            {props.todos.length > 0 && sort === "active" ?
+                props.todos.map(item => {
+                    return (
+                        item.completed === false && (
+                            <TodoItem
+                            key={item.id}
+                            item={item}
+                            removeTodo={props.removeTodo}
+                            updateTodo={props.updateTodo}
+                            completeTodo={props.completeTodo}
+                            />
+                        )   
+                    )
+                }) : null
+            }
+
+            
+        </ul>
+    </div>
   )
 }
 

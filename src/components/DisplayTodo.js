@@ -23,7 +23,15 @@ const DisplayTodo = (props) => {
     const [sort , setSort] = useState("active")
 
   return (
-    <></>
+    <div>
+        <div>
+            <button onClick={() => setSort("active")}>Active</button>
+            <button onClick={() => setSort("completed")}>Completed</button>
+            <button onClick={() => setSort("all")}>All</button>
+        </div>
+
+        
+    </div>
   )
 }
 

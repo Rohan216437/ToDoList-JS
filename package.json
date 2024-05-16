@@ -1,5 +1,6 @@
 {
   "name": "todo",
+  "author" : "Rohan Gupta",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

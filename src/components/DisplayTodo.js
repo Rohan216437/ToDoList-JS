@@ -48,7 +48,23 @@ const DisplayTodo = (props) => {
                 }) : null
             }
 
-            
+            {/* for commpleeted task only  */}
+            {props.todos.length > 0 && sort === "completed" ?
+                props.todos.map(item => {
+                    return (
+                        item.completed === true && (
+                            <TodoItem
+                            key={item.id}
+                            item={item}
+                            removeTodo={props.removeTodo}
+                            updateTodo={props.updateTodo}
+                            completeTodo={props.completeTodo}
+                            />
+                        )
+                    )
+                }) : null
+            }
+
         </ul>
     </div>
   )

@@ -1,13 +1,12 @@
 import Todos from "./components/Todos";
-import TodoItem from './components/TodoItem'
 import DisplayTodo from "./components/DisplayTodo";
 
 function App() {
   return (
-    <div className="App">
+    <div className="mt-2">
+      <h1 className="mt-2 bg-sky-50">Todo App</h1>
       <Todos />
       <DisplayTodo />
-
     </div>
   );
 }

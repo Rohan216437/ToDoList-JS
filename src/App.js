@@ -3,8 +3,8 @@ import DisplayTodo from "./components/DisplayTodo";
 
 function App() {
   return (
-    <div className="mt-2">
-      <h1 className="mt-2 bg-sky-50">Todo App</h1>
+    <div className="mt-12 flex flex-col">
+      <h1 className="text-3xl inline text-center mb-8 text-white">Todo App</h1>
       <Todos />
       <DisplayTodo />
     </div>

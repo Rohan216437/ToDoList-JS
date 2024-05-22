@@ -23,11 +23,17 @@ const DisplayTodo = (props) => {
     const [sort , setSort] = useState("active")
 
   return (
-    <div>
-        <div>
-            <button onClick={() => setSort("active")}>Active</button>
-            <button onClick={() => setSort("completed")}>Completed</button>
-            <button onClick={() => setSort("all")}>All</button>
+    <div className='flex flex-col items-center'>
+        <div className="flex w-6/12 justify-center pb-4">
+            <button 
+                class="w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0"
+                onClick={() => setSort("active")}>Active</button>
+            <button 
+                class="w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0"
+                onClick={() => setSort("completed")}>Completed</button>
+            <button 
+                class="w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0"
+                onClick={() => setSort("all")}>All</button>
         </div>
 
         <ul>

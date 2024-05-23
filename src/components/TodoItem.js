@@ -20,7 +20,7 @@ const TodoItem = (props) => {
   }
 
   return (
-    <li key={item.id}>
+    <li key={item.id} className="flex flex-col bg-[#F3F5F6] m-0 mr-4 mb-4 h-32 w-72 rounded-md p-4 relative">
         <textarea
           ref={inputRef} 
           disabled={inputRef} 

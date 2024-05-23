@@ -36,7 +36,7 @@ const DisplayTodo = (props) => {
                 onClick={() => setSort("all")}>All</button>
         </div>
 
-        <ul>
+        <ul class="list-none flex self-start flex-wrap ml-[5%]">
             {/* for active task only */}
             {props.todos.length > 0 && sort === "active" ?
                 props.todos.map(item => {

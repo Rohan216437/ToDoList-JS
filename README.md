@@ -50,8 +50,3 @@ The following scripts are available in this project:
   - `@testing-library/user-event`: ^13.5.0
 - **Web Vitals**: ^2.1.4
 - **React Scripts**: 5.0.1
-
-## Development
-
-This project uses ESLint for code linting with configurations extending from `react-app` and `react-app/jest`.
-

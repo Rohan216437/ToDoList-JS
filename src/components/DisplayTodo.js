@@ -23,6 +23,7 @@ const DisplayTodo = (props) => {
     const [sort , setSort] = useState("active")
 
   return (
+    // displays all todo items
     <div className='flex flex-col items-center'>
         <div className="flex w-6/12 justify-center pb-4">
             <button 
@@ -52,7 +53,7 @@ const DisplayTodo = (props) => {
                         )   
                     )
                 }) : null
-            }
+                }
 
             {/* for commpleeted task only  */}
             {props.todos.length > 0 && sort === "completed" ?

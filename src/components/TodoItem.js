@@ -31,7 +31,9 @@ const TodoItem = (props) => {
         className={`flex-grow mb-2  ${item.completed ? 'bg-green-200' : 'bg-[#E0F7FA]'} text-black p-2 rounded`}
     ></textarea>
     <div className="flex justify-end gap-2">
-        
+        <button onClick={() => changeFocus()} className="p-2 text-sm hover:shadow-md"><MdEdit /></button>
+        <button onClick={() => completeTodo(item.id)} className="p-2 text-sm   hover:shadow-md"><SiTicktick /></button>
+        <button onClick={() => removeTodo(item.id)} className="p-2 text-lg hover:shadow-md"><MdDeleteForever /></button>
     </div>
     {item.completed && <span className="completed">Done</span>}
 </li>

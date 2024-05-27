@@ -22,18 +22,18 @@ const TodoItem = (props) => {
   }
 
   return (
-    <li key={item.id} className="flex flex-col bg-[#F3F5F6] m-0 mr-4 mb-4 h-32 w-72 rounded-md p-4 relative">
+    <li key={item.id} className={`flex flex-col ${item.completed ? 'bg-green-200' : 'bg-[#E0F7FA]'} m-0 mr-4 mb-4 h-32 w-72 rounded-md p-4 relative`}>
     <textarea
         ref={inputRef}
         disabled={inputRef}
         defaultValue={item.item}
         onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
-        className="flex-grow mb-2"
+        className={`flex-grow mb-2  ${item.completed ? 'bg-green-200' : 'bg-[#E0F7FA]'} text-black p-2 rounded`}
     ></textarea>
     <div className="flex justify-end gap-2">
-        <button onClick={() => changeFocus()}><MdEdit /></button>
-        <button onClick={() => completeTodo(item.id)}><SiTicktick /></button>
-        <button onClick={() => removeTodo(item.id)}><MdDeleteForever /></button>
+        <button onClick={() => changeFocus()} className="p-2 text-sm hover:shadow-md"><MdEdit /></button>
+        <button onClick={() => completeTodo(item.id)} className="p-2 text-sm   hover:shadow-md"><SiTicktick /></button>
+        <button onClick={() => removeTodo(item.id)} className="p-2 text-lg hover:shadow-md"><MdDeleteForever /></button>
     </div>
     {item.completed && <span className="completed">Done</span>}
 </li>

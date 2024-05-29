@@ -36,7 +36,18 @@ const DisplayTodo = (props) => {
             animate="visible"
         >
             
-           
+            <motion.button 
+                variants={item}
+                class=" item w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl"
+                onClick={() => setSort("active")}>Active</motion.button>
+            <motion.button
+                variants={item} 
+                class="item w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl"
+                onClick={() => setSort("completed")}>Completed</motion.button>
+            <motion.button
+                variants={item} 
+                class="item w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl"
+                onClick={() => setSort("all")}>All</motion.button>
         </motion.div>
 
         <ul class="list-none flex self-start flex-wrap ml-[5%]">

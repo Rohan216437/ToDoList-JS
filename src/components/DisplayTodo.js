@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { addTodos, completeTodos, removeTodos, updateTodos } from '../redux/reducer'
 import TodoItem from './TodoItem'
+import { motion } from "framer-motion";
+
 
 const mapStateToProps = (state) => {
     return {
@@ -22,20 +24,20 @@ const DisplayTodo = (props) => {
 
     const [sort , setSort] = useState("active")
 
-  return (
+    
+
+  return (  
     // displays all todo items
     <div className='flex flex-col items-center'>
-        <div className="flex w-6/12 justify-center pb-4">
-            <button 
-                class="w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl"
-                onClick={() => setSort("active")}>Active</button>
-            <button 
-                class="w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl"
-                onClick={() => setSort("completed")}>Completed</button>
-            <button 
-                class="w-full mx-2 text-center py-3 px-8 text-sm font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer sm:w-min hover:bg-gray-100 hover:text-cyan-800  dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl"
-                onClick={() => setSort("all")}>All</button>
-        </div>
+        <motion.div 
+            className="flex w-6/12 justify-center pb-4" 
+            variants={container}
+            initial="hidden"
+            animate="visible"
+        >
+            
+           
+        </motion.div>
 
         <ul class="list-none flex self-start flex-wrap ml-[5%]">
             {/* for active task only */}

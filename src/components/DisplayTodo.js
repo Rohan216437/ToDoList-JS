@@ -42,6 +42,13 @@ const DisplayTodo = (props) => {
         }
     };
 
+    const buttonStyle = (type) => ({
+        padding: sort === type ? "20px 20px" : "8px 16px",
+        fontSize: sort === type ? "1.125rem" : "0.875rem",
+        width: sort === type ? (type  === "active" || "all" ? "100px" : "150px" , console.log(type)) : "auto",
+        transition: "all 0.3s ease"
+    });
+
     return (
         <div className='flex flex-col items-center'>
             <motion.div
@@ -52,12 +59,7 @@ const DisplayTodo = (props) => {
             >
                 <motion.button
                     variants={item}
-                    animate={{
-                        padding: sort === "active" ? "20px 20px" : "8px 16px",
-                        fontSize: sort === "active" ? "1.125rem" : "0.875rem",
-                        width: sort === "active" ? "100px" : "auto"
-                    }}
-                    transition={{ duration: 0.3 }}
+                    style={buttonStyle("active")}
                     className={`item mx-2 text-center font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer hover:bg-gray-100 hover:text-cyan-800 dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl`}
                     onClick={() => setSort("active")}
                 >
@@ -65,12 +67,7 @@ const DisplayTodo = (props) => {
                 </motion.button>
                 <motion.button
                     variants={item}
-                    animate={{
-                        padding: sort === "completed" ? "20px 20px" : "8px 16px",
-                        fontSize: sort === "completed" ? "1.125rem" : "0.875rem",
-                        width: sort === "completed" ? "150px" : "auto"
-                    }}
-                    transition={{ duration: 0.3 }}
+                    style={buttonStyle("completed")}
                     className={`item mx-2 text-center font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer hover:bg-gray-100 hover:text-cyan-800 dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl`}
                     onClick={() => setSort("completed")}
                 >
@@ -78,12 +75,7 @@ const DisplayTodo = (props) => {
                 </motion.button>
                 <motion.button
                     variants={item}
-                    animate={{
-                        padding: sort === "all" ? "20px 20px" : "8px 16px",
-                        fontSize: sort === "all" ? "1.125rem" : "0.875rem",
-                        width: sort === "all" ? "100px" : "auto"
-                    }}
-                    transition={{ duration: 0.3 }}
+                    style={buttonStyle("all")}
                     className={`item mx-2 text-center font-medium bg-white text-cyan-800 rounded-2xl cursor-pointer hover:bg-gray-100 hover:text-cyan-800 dark:text-cyan-800 dark:hover:text-cyan-800 mb-4 sm:mb-0 shadow-xl`}
                     onClick={() => setSort("all")}
                 >

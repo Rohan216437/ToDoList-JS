@@ -27,7 +27,9 @@ const TodoItem = (props) => {
     <motion.li 
       layout
       // initial={{ scale: 0.8, opacity: 0 }}
-      
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.8, opacity: 0 }}
+      transition={{ type: "spring" }}
       key={item.id} className={`flex flex-col ${item.completed ? 'bg-green-200' : 'bg-[#E0F7FA]'} m-0 mr-4 mb-4 h-32 w-72 rounded-md p-4 relative`}
       >
       <textarea

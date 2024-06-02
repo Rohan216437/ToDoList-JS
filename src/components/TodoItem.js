@@ -44,7 +44,7 @@ const TodoItem = (props) => {
           <button onClick={() => completeTodo(item.id)} className="p-2 text-sm   hover:shadow-md"><SiTicktick /></button>
           <button onClick={() => removeTodo(item.id)} className="p-2 text-lg hover:shadow-md"><MdDeleteForever /></button>
       </div>
-      {item.completed && <span className="completed">Done</span>}
+      {/* {item.completed && <span className="completed">Done</span>} */}
     </motion.li>
     </AnimatePresence>
 

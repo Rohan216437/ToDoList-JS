@@ -40,7 +40,16 @@ const Todos = (props) => {
   //   }
   // }
 
-  
+  const addTodo = () => {
+    if (todo.trim().length >= 5) {
+      props.addTodo({
+        id: Math.floor(Math.random() * 1000),
+        item: todo,
+        completed: false,
+      });
+      setTodo(''); // Clear the input box
+    }
+  };
   return (
     <div className='flex flex-row justify-center'>
       <form action="#" class="mt-4">

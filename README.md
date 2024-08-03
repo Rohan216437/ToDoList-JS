@@ -30,6 +30,17 @@ The following scripts are available in this project:
   ```bash
   npm start
   ```
+
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
 - `build`: Builds the app for production to the `build` folder.
   ```bash
   npm run build
